@@ -15,4 +15,17 @@ router.post('/subscribe', async (req, res) => {
 
 })
 
+router.get('/getallsubscribers', async (req, res) => {
+
+    try {
+        const subscribers = await Subscriber.find();
+        res.send(subscribers)
+
+    }
+    catch (err) {
+        return res.status(400).json(err);
+    }
+
+})
+
 module.exports = router;
