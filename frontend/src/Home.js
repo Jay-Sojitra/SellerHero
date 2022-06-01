@@ -74,8 +74,8 @@ const Home = () => {
             <p className='p16'>14-day free trial | No credit card required</p>
 
             <span className='s2'>
-                <button className='bt1'>Monthly</button>
-                <button className='bt2'>Yearly</button>
+                <button className='bt1'>Yearly</button>
+                <button className='bt2'>Monthly</button>
             </span>
             <div >
                 {plans.map(plan => {
@@ -85,7 +85,7 @@ const Home = () => {
                             <ul className="price">
                                 <li className="header">{plan.name}</li>
                                 <p className='plandesc'><b>{plan.desc}</b></p>
-                                <li className="grey">$ {plan.price}/ year</li>
+                                <li className="grey">$ {plan.yearly_price}/ year</li>
                                 <li>{plan.benefit1}</li>
                                 <li>{plan.benefit2}</li>
                                 <li>{plan.benefit3}</li>

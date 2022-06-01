@@ -10,7 +10,7 @@ export const getAllPlans = () => {
         })
 
         try {
-            const response = await axios.get('/api/plans/getallplan')
+            const response = await axios.get('/api/plans/getallactiveplan')
             console.log(response);
             dispatch({
                 type: 'GET_ALL_PLANS',

@@ -28,7 +28,11 @@ const AddPlan = () => {
                                 <Input />
                             </Form.Item>
 
-                            <Form.Item name="price" label="Price" rules={[{ required: true }]}>
+                            <Form.Item name="monthly_price" label="Monthly Price" rules={[{ required: true }]}>
+                                <Input type= 'number' />
+                            </Form.Item>
+
+                            <Form.Item name="yearly_price" label="Yearly Price" rules={[{ required: true }]}>
                                 <Input type= 'number' />
                             </Form.Item>
 
