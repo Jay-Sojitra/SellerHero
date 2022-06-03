@@ -16,13 +16,17 @@ import { getAllFaqs } from "./redux/actions/faqsAction";
 import { userSubscription } from "./redux/actions/subscriberAction";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import Spinner from "./Spinner";
 
 const Home = () => {
 
     const [email, setEmail] = useState('');
+    const [time, setTime] = useState('year');
+
     const dispatch = useDispatch();
     const { plans } = useSelector(state => state.plansReducer);
     const { faqs } = useSelector(state => state.faqsReducer);
+    const { loading } = useSelector(state => state.alertsReducer);
 
     useEffect(() => {
         dispatch(getAllFaqs());
@@ -37,7 +41,9 @@ const Home = () => {
     }
     return (
         <div>
+            
             <NavBar />
+            {loading === true && (<Spinner />)}
             <div>
                 <img src={jpg1} alt='jpg1' className='jpg1' />
                 <img src={jpg2} alt='jpg2' className='jpg2' />
@@ -47,7 +53,7 @@ const Home = () => {
             <input className='i1' placeholder="Enter business Name" />
             <img className='jpg4' src={jpg4} alt='jpg4' />
             <img className='jpg5' src={jpg5} alt='jpg5' />
-            <p className='p2'>Product Featuring section</p>
+            <p className='p2'>Product <span className='s1'>Featuring</span> section</p>
             <img className='jpg7' src={jpg7} alt='jpg7' />
             <img className='jpg6' src={jpg6} alt='jpg6' />
             <p className='p3'>Create accountability with email ownership and status</p>
@@ -74,18 +80,21 @@ const Home = () => {
             <p className='p16'>14-day free trial | No credit card required</p>
 
             <span className='s2'>
-                <button className='bt1'>Yearly</button>
-                <button className='bt2'>Monthly</button>
+                <button className='bt1' onClick={() =>setTime('month')}>Monthly</button>
+                <button className='bt2' onClick={() =>setTime('year')}>Yearly</button>
             </span>
             <div >
                 {plans.map(plan => {
+
                     return (
 
                         <div className="columns">
                             <ul className="price">
-                                <li className="header">{plan.name}</li>
+                                <li className="header"><b>{plan.name}</b></li>
                                 <p className='plandesc'><b>{plan.desc}</b></p>
-                                <li className="grey">$ {plan.yearly_price}/ year</li>
+                                {time === 'month' ? <li className="grey">$ {plan.monthly_price}/ Month</li> :
+                                    <li className="grey">$ {plan.yearly_price}/ year</li>
+                                }
                                 <li>{plan.benefit1}</li>
                                 <li>{plan.benefit2}</li>
                                 <li>{plan.benefit3}</li>
@@ -104,7 +113,7 @@ const Home = () => {
                     return (
                         <div className="p18">
 
-                            <h2 className="s1">{faq.que}</h2>
+                            <h2 className="s1"><b>{faq.que}</b></h2>
                             <h4>{faq.ans}</h4>
                             <br />
                         </div>
@@ -126,7 +135,7 @@ const Home = () => {
                 <button className="bt3" onClick={clickHandler} >Subscribe</button>
             </form>
 
-        <Footer />
+            <Footer />
         </div >
 
     )

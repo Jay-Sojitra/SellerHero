@@ -5,6 +5,11 @@ import Home from "./components/Home";
 import AddPlan from "./components/AddPlan";
 import AddFaq from "./components/AddFaqs";
 import 'antd/dist/antd.css';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Protect from "./components/Protect";
+import EditPlan from "./components/EditPlan";
+import Plans from "./components/Plans";
 
 
 
@@ -14,9 +19,13 @@ const App = () => {
     <div className='App'>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/plans" element={<AddPlan/>} />
-          <Route path="/faqs" element={<AddFaq/>} />
+          <Route path="/" exact element={<Protect> <Home /></Protect>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/addplan" element={<Protect><AddPlan /></Protect>} />
+          <Route path="/editplan/:planid" element={<Protect><EditPlan /></Protect>} />
+          <Route path="/plans" element={<Protect><Plans /></Protect>} />
+          <Route path="/faqs" element={<Protect><AddFaq /></Protect>} />
         </Routes>
       </Router>
 

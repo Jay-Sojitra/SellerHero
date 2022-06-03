@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from '../redux/actions/userActions';
 import { getAllSubscribers } from '../redux/actions/subscriberAction';
 import './Home.css';
+import Spinner from './Spinner';
+
+
 
 
 const Home = () => {
@@ -11,6 +14,7 @@ const Home = () => {
     const dispatch = useDispatch();
     const { users } = useSelector(state => state.usersReducer)
     const { subscribers } = useSelector(state => state.subscribersReducer)
+    const { loading } = useSelector(state => state.alertsReducer)
 
     useEffect(() => {
         dispatch(getAllUsers());
@@ -23,14 +27,17 @@ const Home = () => {
     return (
         <div>
             <NavBar />
+            {loading === true && (<Spinner />)}
             <div className='row'>
                 <div className="column">
-                    <div className="card">
-                        <h1>Users List</h1>
+                    <div className="card bs1">
+                        <h1 className='title1'>Users List</h1>
                         {users.map(user => {
                             return (
                                 <div>
-                                    <p> {user.username}</p>
+                                    <hr />
+                                    {/* <Title level={5}>{user.username}</Title> */}
+                                    <p className='title2'> {user.username}</p>
                                 </div>
                             )
                         })}
@@ -38,12 +45,13 @@ const Home = () => {
                 </div>
 
                 <div className="column">
-                    <div className="card">
-                        <h1>Subscribers List</h1>
+                    <div className="card bs1">
+                        <h1 className='title1'>Subscribers List</h1>
                         {subscribers.map(subscriber => {
                             return (
                                 <div>
-                                    <p> {subscriber.email}</p>
+                                    <hr />
+                                    <p className='title2'>  {subscriber.email}</p>
                                 </div>
                             )
                         })}

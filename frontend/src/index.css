@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+}
+
 .bs1 {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
@@ -33,12 +40,12 @@ code {
 
 .p1 {
   position: absolute;
-  width: 668px;
+  width: 689px;
   height: 56px;
   left: 440px;
-  top: 500px;
+  top: 504px;
 
-  font-family: 'Inter';
+  font-family: 'Padauk', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -59,7 +66,7 @@ code {
   width: 413px;
   height: 60px;
   left: calc(50% - 413px/2 - 0.5px);
-  top: 569px;
+  top: 576px;
 
   background: #FFFFFF;
   border: 1px solid #1A81DC;
@@ -90,7 +97,7 @@ code {
   width: 362px;
   height: 46px;
   left: 545px;
-  top: 657px;
+  top: 670px;
 }
 
 .jpg5 {
@@ -454,13 +461,16 @@ code {
 
 .p16 {
   position: absolute;
-  width: 332px;
+  width: 353px;
   height: 25px;
   left: 635px;
   top: 3733px;
 
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Rubik', sans-serif
+  ; */
   font-style: italic;
+  
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -489,10 +499,36 @@ code {
   height: 56px;
   left: 10px;
   top: 7px;
+  border: 1px solid white;
+  background: rgb(72, 172, 230);
+  box-shadow: 0 7px #999;
+  border-radius: 15px;
+  color: white;
+}
+
+.bt1:active {
   border: 1px solid #1A81DC;
   background: #1A81DC;
-  border-radius: 15px;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
+
+.bt1:hover {
+  background: #1A81DC;
+}
+
+.bt2:hover {
+  background: #1A81DC;
+}
+
+.bt2:active {
+  border: 1px solid #1A81DC;
+  background: #1A81DC;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
 
 .bt2 {
   position: absolute;
@@ -500,15 +536,24 @@ code {
   height: 56px;
   left: 23vh;
   top: 7px;
+  color: white;
+  box-shadow: 0 7px #999;
   border: 1px solid white;
-  background: white;
+  background: rgb(72, 172, 230);
   border-radius: 15px;
+}
+
+.bt2:active {
+  border: 1px solid #1A81DC;
+  background: #1A81DC;
 }
 
 .plandesc {
   margin-left: 11vh;
   padding-top: 10px;
   font-size: 15px;
+  font-weight: 500;
+  font-family: 'Open Sans';
 }
 
 * {
@@ -536,6 +581,11 @@ code {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
 }
 
+.header{
+  font-family: 'Open Sans';
+  
+}
+
 .price .header {
   background-color: #3d9af4;
   color: white;
@@ -548,11 +598,16 @@ code {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  
 }
 
 .price .grey {
   background-color: #eee;
   font-size: 20px;
+  font-family: 'Open Sans';
+  font-weight: 600;
 }
 
 .button {
@@ -661,7 +716,7 @@ code {
   left: 165px;
   top: 5502px;
 
-  font-family: 'Open Sans';
+  font-family: 'Rubik', sans-ser if;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -713,7 +768,7 @@ code {
 .footerT {
   text-align: center;
   color: white;
-  background-color:#1A81DC;
+  background-color: #1A81DC;
   margin: auto;
 }
 

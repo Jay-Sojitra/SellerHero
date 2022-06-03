@@ -24,6 +24,10 @@
 
 
 body{
-    background-color: white !important;
+    background-color: azure;
    
+}
+
+h1{
+    font-family: 'Rubik';
 }

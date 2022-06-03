@@ -16,6 +16,13 @@ body {
 
 }
 
+/* .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+} */
+
 /* Remove extra left and right margins, due to padding */
 .row {
     margin: 0 -5px;
@@ -42,6 +49,29 @@ body {
     }
 }
 
+.title1 {
+    color: #2e78c8;
+    font-family: 'Rubik';
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+    background-color: aliceblue;
+    margin-top: 5px;
+}
+
+
+.title2 {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Open Sans';
+}
+
+.bs1 {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
 /* Style the counter cards */
 .card {
     position: relative;
@@ -55,7 +85,11 @@ body {
     width: 97%;
     margin-left: 12px;
     text-align: center;
+    font-family: 'Rubik';
     justify-content: center;
+    /* background-color: #84c0c8; */
+    background-color: white;
+    color: rgb(244, 232, 232);
 }
 
 .row>* {

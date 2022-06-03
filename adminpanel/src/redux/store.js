@@ -4,13 +4,18 @@ import thunk from 'redux-thunk';
 import { alertsReducer } from './reducers/alertsReducer'
 import { usersReducer } from './reducers/usersReducer';
 import { subscribersReducer } from './reducers/subscribersReducer'
+import { plansReducer,ActivePlansReducer } from './reducers/plansReducer'
+
 
 const composeEnhancers = composeWithDevTools({});
 
 const rootReducer = combineReducers({
     alertsReducer,
     usersReducer,
-    subscribersReducer
+    subscribersReducer, 
+    plansReducer,
+    ActivePlansReducer
+
 })
 
 

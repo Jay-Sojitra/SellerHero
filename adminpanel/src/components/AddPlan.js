@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'antd/dist/antd.css';
-import { Col, Input, Row, Form } from 'antd';
-import { useDispatch} from 'react-redux';
+import { Col, Input, Row, Form, InputNumber } from 'antd';
+import { useDispatch } from 'react-redux';
 import { AddPlans } from '../redux/actions/plansAction';
 import './Plan.css';
 import NavBar from './NavBar';
+const { TextArea } = Input;
 
 const AddPlan = () => {
 
+    const [value, setValue] = useState('');
+    const [value1, setValue1] = useState('');
     const dispatch = useDispatch()
     const onFinish = (values) => {
         dispatch(AddPlans(values))
@@ -28,16 +31,16 @@ const AddPlan = () => {
                                 <Input />
                             </Form.Item>
 
-                            <Form.Item name="monthly_price" label="Monthly Price" rules={[{ required: true }]}>
-                                <Input type= 'number' />
+                            <Form.Item name="monthly_price" label="Monthly Price" rules={[{ required: true, message: 'Only required Numbers and Greater Than Zero' }]}>
+                                <InputNumber min={1} value={value1} onChange={setValue1} style={{ width: '100%' }} />
                             </Form.Item>
 
-                            <Form.Item name="yearly_price" label="Yearly Price" rules={[{ required: true }]}>
-                                <Input type= 'number' />
+                            <Form.Item name="yearly_price" label="Yearly Price" rules={[{ required: true, message: 'Only required Numbers and Greater Than Zero' }]}>
+                                <InputNumber min={1} value={value} onChange={setValue} style={{ width: '100%' }} />
                             </Form.Item>
 
                             <Form.Item name="desc" label="Description" rules={[{ required: true }]}>
-                                <Input />
+                                <TextArea rows={4} />
                             </Form.Item>
 
                             <Form.Item name="benefit1" label="Benefit 1" rules={[{ required: true }]}>
